@@ -1,0 +1,15 @@
+# Terraform state files (sensibles)
+terraform.tfstate
+terraform.tfstate.backup
+*.tfstate*
+
+# Archivos generados por Terraform init
+.terraform/
+
+# Variables (por si en el futuro usas archivos *.tfvars)
+*.tfvars
+
+# Logs y archivos temporales
+*.log
+crash.log
+*.bak
