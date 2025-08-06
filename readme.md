@@ -1,6 +1,6 @@
 # terraform-iam-user-ec2-access
 
-Este repositorio muestra cómo crear un usuario IAM en AWS y asignarlo a un grupo con permisos completos sobre EC2 utilizando **Terraform**. El proyecto es parte de mi portafolio profesional técnico orientado a roles de **Cloud Engineer Junior** y refleja dominio de conceptos clave de gobernanza y automatización en la nube.
+Este repositorio muestra cómo crear un usuario IAM en AWS y asignarlo a un grupo con permisos completos sobre EC2 utilizando **Terraform**. El proyecto es parte de mi portafolio profesional técnico orientado a roles de **Cloud Engineer** y refleja dominio de conceptos clave de gobernanza y automatización en la nube.
 
 ---
 
