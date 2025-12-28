@@ -1,18 +1,14 @@
 ![Banner](banner-es.png)
 
-<<<<<<< HEAD
-Este repositorio muestra cómo crear un usuario IAM en AWS y asignarlo a un grupo con permisos completos sobre EC2 utilizando **Terraform**. El proyecto es parte de mi portafolio profesional técnico orientado a roles de **Cloud Engineer** y refleja dominio de conceptos clave de gobernanza y automatización en la nube.
-=======
-📘 Available languages:
-- 🇪🇸 Español (README.md)
-- 🇬🇧 English Version (README_EN.md)
+📘 **Available languages**
+- 🇪🇸 [Versión en Español](README.md)
+- 🇬🇧 [English Version](README_EN.md)
 
 # 🚀 Terraform – IAM User con acceso a Amazon EC2
 
 Este proyecto demuestra cómo **crear y gestionar usuarios IAM en AWS utilizando Terraform**, aplicando el enfoque de **Infraestructura como Código (IaC)** y buenas prácticas de **gobernanza y control de accesos en la nube**.
 
 Forma parte de mi **portafolio profesional Cloud & DevOps**, orientado a posiciones **Junior Cloud Engineer / DevOps Engineer**, y muestra ejecución real en AWS con evidencias verificables.
->>>>>>> 9f7b799 (docs: enhance README, add architecture diagram and English version)
 
 ---
 
@@ -192,11 +188,6 @@ Estas evidencias confirman que:
 ## 👨‍💻 Autor
 
 **Larry Andrés Rondan Manrique**  
-<<<<<<< HEAD
-📬 Email: larrycloudaws@gmail.com  
-🐙 GitHub: [@larrycloud](https://github.com/larrycloud)
-=======
 🌐 Portafolio: https://devopscloud.click  
 🐙 GitHub: https://github.com/larrycloud  
 💼 LinkedIn: https://www.linkedin.com/in/larry-cloud-devops/
->>>>>>> 9f7b799 (docs: enhance README, add architecture diagram and English version)

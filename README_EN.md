@@ -1,8 +1,8 @@
 ![Banner](banner-en.png)
 
-📘 Available languages:
-- 🇬🇧 English (this document)
-- 🇪🇸 Versión en Español (README.md)
+📘 **Available languages**
+- 🇪🇸 [Versión en Español](README.md)
+- 🇬🇧 [English Version](README_EN.md)
 
 # 🚀 Terraform – IAM User with Access to Amazon EC2
 
