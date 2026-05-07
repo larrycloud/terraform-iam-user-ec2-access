@@ -1,14 +1,14 @@
 ![Banner](banner-en.png)
 
 📘 **Available languages**
-- 🇪🇸 [Versión en Español](README.md)
+- 🇪🇸 [Versión en Español](readme.md)
 - 🇬🇧 [English Version](README_EN.md)
 
 # 🚀 Terraform – IAM User with Access to Amazon EC2
 
 This project demonstrates how to **create and manage AWS IAM users using Terraform**, applying the **Infrastructure as Code (IaC)** approach and best practices for **cloud governance and access control**.
 
-It is part of my **Cloud & DevOps professional portfolio**, oriented toward **Junior Cloud Engineer / DevOps Engineer** roles, and showcases real AWS execution with verifiable evidence.
+It is part of my **Cloud & DevOps professional portfolio**, focused on infrastructure automation, AWS identity management, and the application of DevOps best practices with verifiable evidence.
 
 ---
 
@@ -50,15 +50,14 @@ The architecture represents the permission flow:
 terraform-iam-user-ec2-access/
 ├── main.tf
 ├── outputs.tf
-├── README.md
+├── readme.md
 ├── README_EN.md
 ├── architecture/
 │   └── terraform_iam_ec2.png
 └── screenshots/
     └── *.png
-
-
 ```
+
 ---
 
 ## 🔍 Technical Explanation
@@ -72,8 +71,6 @@ terraform-iam-user-ec2-access/
 - Associates the user with the IAM group.
 
 This approach allows **centralized permission management**, easier **auditing**, and **scalable access control** without modifying individual users.
-
----
 
 ### `outputs.tf`
 
@@ -92,8 +89,8 @@ This enables **direct verification from the terminal output**, without relying o
 terraform init     # Initialize the project
 terraform plan     # Preview planned changes
 terraform apply    # Provision resources in AWS
-
 ```
+
 ---
 
 ## 🧪 AWS Verification
@@ -109,10 +106,6 @@ After execution, the following is validated:
 ## 📸 Project Evidence (VS Code + AWS Console)
 
 The following screenshots document the **complete step-by-step execution** of the project, from the code in **Visual Studio Code**, through **Terraform execution**, to the **final verification in the AWS Console**.
-
----
-
----
 
 ### 🖥️ Visual Studio Code & Terraform
 
@@ -137,8 +130,6 @@ The following screenshots document the **complete step-by-step execution** of th
 7. **Final outputs after execution**  
    ![07 - Terraform outputs](screenshots/07-resultados-outputs.png)
 
----
-
 ### ☁️ AWS Console (IAM)
 
 8. **IAM user `Ian` successfully created**  
@@ -149,9 +140,6 @@ The following screenshots document the **complete step-by-step execution** of th
 
 10. **User `Ian` associated with `EC2Users` group**  
     ![10 - User-group association](screenshots/10-iam-vinculo-usuario-grupo.png)
-
----
-
 
 These screenshots confirm that:
 

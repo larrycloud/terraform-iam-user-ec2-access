@@ -1,14 +1,14 @@
 ![Banner](banner-es.png)
 
-📘 **Available languages**
-- 🇪🇸 [Versión en Español](README.md)
+📘 **Idiomas disponibles**
+- 🇪🇸 [Versión en Español](readme.md)
 - 🇬🇧 [English Version](README_EN.md)
 
 # 🚀 Terraform – IAM User con acceso a Amazon EC2
 
 Este proyecto demuestra cómo **crear y gestionar usuarios IAM en AWS utilizando Terraform**, aplicando el enfoque de **Infraestructura como Código (IaC)** y buenas prácticas de **gobernanza y control de accesos en la nube**.
 
-Forma parte de mi **portafolio profesional Cloud & DevOps**, orientado a posiciones **Junior Cloud Engineer / DevOps Engineer**, y muestra ejecución real en AWS con evidencias verificables.
+Forma parte de mi **portafolio profesional Cloud & DevOps**, enfocado en la automatización de infraestructura, la administración de identidades en AWS y la aplicación de buenas prácticas DevOps con evidencias verificables.
 
 ---
 
@@ -50,14 +50,14 @@ La arquitectura refleja el flujo de permisos:
 terraform-iam-user-ec2-access/
 ├── main.tf
 ├── outputs.tf
-├── README.md
+├── readme.md
 ├── README_EN.md
 ├── architecture/
 │   └── terraform_iam_ec2.png
 └── screenshots/
     └── *.png
-
 ```
+
 ---
 
 ## 🔍 Explicación técnica
@@ -71,8 +71,6 @@ terraform-iam-user-ec2-access/
 - Vincula el usuario al grupo IAM.
 
 Este enfoque permite **centralizar permisos**, facilitar **auditorías** y **escalar accesos** sin modificar usuarios individualmente.
-
----
 
 ### `outputs.tf`
 
@@ -91,7 +89,6 @@ Esto permite **verificar resultados directamente desde la consola**, sin depende
 terraform init     # Inicializa el proyecto
 terraform plan     # Muestra los cambios a aplicar
 terraform apply    # Crea los recursos en AWS
-
 ```
 
 ---
@@ -109,8 +106,6 @@ Tras la ejecución se valida que:
 ## 📸 Evidencias visuales del proyecto (VS Code + AWS Console)
 
 Las siguientes capturas documentan **paso a paso** la ejecución completa del proyecto, desde el código en **Visual Studio Code**, la ejecución de **Terraform**, hasta la **verificación final en la consola de AWS**.
-
----
 
 ### 🖥️ Visual Studio Code & Terraform
 
@@ -135,8 +130,6 @@ Las siguientes capturas documentan **paso a paso** la ejecución completa del pr
 7. **Resultados finales y outputs generados**  
    ![07 - resultados outputs](screenshots/07-resultados-outputs.png)
 
----
-
 ### ☁️ Consola de AWS (IAM)
 
 8. **Usuario IAM `Ian` creado correctamente**  
@@ -147,8 +140,6 @@ Las siguientes capturas documentan **paso a paso** la ejecución completa del pr
 
 10. **Usuario `Ian` asociado al grupo `EC2Users`**  
     ![10 - Usuario vinculado al grupo](screenshots/10-iam-vinculo-usuario-grupo.png)
-
----
 
 Estas evidencias confirman que:
 
