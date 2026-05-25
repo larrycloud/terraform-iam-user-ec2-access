@@ -16,7 +16,7 @@ It is part of my **Cloud & DevOps professional portfolio**, focused on infrastru
 
 - Create an **IAM user** named `Ian`
 - Create an **IAM group** named `EC2Users`
-- Attach the managed policy `AmazonEC2FullAccess`
+- Attach a custom least-privilege IAM policy for operating only tagged EC2 instances
 - Associate the user with the group to inherit permissions
 - Manage the entire process using **Terraform**
 
@@ -67,7 +67,8 @@ terraform-iam-user-ec2-access/
 - Defines the AWS provider and region.
 - Creates the IAM user **Ian**.
 - Creates the IAM group **EC2Users**.
-- Attaches the **AmazonEC2FullAccess** policy.
+- Attaches a custom **least-privilege** policy.
+- Limits `StartInstances`, `StopInstances` and `RebootInstances` to instances with the `Project` tag.
 - Associates the user with the IAM group.
 
 This approach allows **centralized permission management**, easier **auditing**, and **scalable access control** without modifying individual users.
@@ -99,7 +100,8 @@ After execution, the following is validated:
 
 - The **Ian** IAM user was successfully created.
 - The user belongs to the **EC2Users** group.
-- The group has the **AmazonEC2FullAccess** policy attached.
+- The group has a custom least-privilege policy attached.
+- EC2 operational actions are restricted by resource tag.
 
 ---
 
@@ -161,16 +163,23 @@ These screenshots confirm that:
 
 ## ⚠️ Security Considerations
 
-> The **AmazonEC2FullAccess** policy is used for **educational and demonstration purposes**.  
-> In production environments, the **principle of least privilege** should be applied using custom policies.
+> This project applies a custom IAM policy with a **least-privilege** approach.  
+> EC2 read actions are global because AWS requires `Resource: "*"`, while operational actions are restricted to tagged instances.
+
+## CI/CD
+
+The `.github/workflows/terraform-ci.yml` workflow validates:
+
+- `terraform fmt -check`
+- `terraform init -backend=false`
+- `terraform validate`
+- Security scanning with Checkov
 
 ---
 
 ## ✨ Future Improvements
 
-- Create custom IAM policies (`aws_iam_policy_document`).
 - Modularize the Terraform code.
-- Use variables (`variables.tf`).
 - Environment separation (**dev / prod**).
 - Use IAM roles and temporary credentials (**STS**).
 

@@ -16,7 +16,7 @@ Forma parte de mi **portafolio profesional Cloud & DevOps**, enfocado en la auto
 
 - Crear un **usuario IAM** llamado `Ian`
 - Crear un **grupo IAM** llamado `EC2Users`
-- Asignar la política administrada `AmazonEC2FullAccess`
+- Asignar una política IAM custom de mínimo privilegio para operar solo instancias EC2 etiquetadas
 - Asociar el usuario al grupo para heredar permisos
 - Gestionar todo el proceso mediante **Terraform**
 
@@ -67,7 +67,8 @@ terraform-iam-user-ec2-access/
 - Define el proveedor AWS y la región.
 - Crea el usuario IAM **Ian**.
 - Crea el grupo IAM **EC2Users**.
-- Asigna la política **AmazonEC2FullAccess**.
+- Asigna una política custom de **mínimo privilegio**.
+- Limita `StartInstances`, `StopInstances` y `RebootInstances` a instancias con tag `Project`.
 - Vincula el usuario al grupo IAM.
 
 Este enfoque permite **centralizar permisos**, facilitar **auditorías** y **escalar accesos** sin modificar usuarios individualmente.
@@ -99,7 +100,8 @@ Tras la ejecución se valida que:
 
 - El usuario **Ian** fue creado correctamente.
 - El usuario pertenece al grupo **EC2Users**.
-- El grupo tiene asignada la política **AmazonEC2FullAccess**.
+- El grupo tiene asignada una política custom de mínimo privilegio.
+- Las acciones operativas sobre EC2 se limitan por tag de recurso.
 
 ---
 
@@ -161,16 +163,23 @@ Estas evidencias confirman que:
 
 ## ⚠️ Consideraciones de seguridad
 
-> La política **AmazonEC2FullAccess** se utiliza con fines **educativos y demostrativos**.  
-> En entornos productivos se recomienda aplicar el **principio de menor privilegio**, utilizando políticas personalizadas.
+> El proyecto aplica una política IAM custom con enfoque de **mínimo privilegio**.  
+> Las acciones de lectura EC2 son globales porque AWS las requiere con `Resource: "*"`, pero las acciones operativas se restringen a instancias etiquetadas.
+
+## CI/CD
+
+El workflow `.github/workflows/terraform-ci.yml` valida:
+
+- `terraform fmt -check`
+- `terraform init -backend=false`
+- `terraform validate`
+- Escaneo de seguridad con Checkov
 
 ---
 
 ## ✨ Próximas mejoras
 
-- Crear políticas IAM personalizadas (`aws_iam_policy_document`).
 - Modularizar el código Terraform.
-- Uso de variables (`variables.tf`).
 - Separación por entornos (**dev / prod**).
 - Uso de roles IAM y credenciales temporales (**STS**).
 
